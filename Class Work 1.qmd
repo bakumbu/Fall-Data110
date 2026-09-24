@@ -1,0 +1,46 @@
+---
+title: "Untitled"
+format: html
+editor: visual
+---
+
+**Package Installation**
+
+```{r}
+install.packages("tidyverse")
+library(tidyverse)
+install.packages("ggplot2")
+library(ggplot2)
+install.packages("dslabs")
+library(dslabs)
+install.packages("dplyr")
+library(dplyr)
+data(mpg)
+
+```
+
+**9.2.1 Exercise Part 1**
+
+```{r}
+ggplot(mpg)+geom_point(aes(hwy/10^6,displ)) +
+  geom_point(aes(x = displ, y = hwy, color = "pink"), shape = 17)  
+   
+
+```
+
+**9.2.1 Exercise Part 2**
+
+ggplot(mpg) + geom_point(aes(x = displ, y = hwy, color = "blue"))
+
+**The code did not produce a plot with blue points because after the "ggplot(mpg) +," there is no geom_point aes plotting for the x and y axis.**
+
+**9.2.1 Exercise Part 3 and 4**
+
+```{r}
+ggplot(mpg)+geom_point(aes(hwy/10^6,displ)) +
+  geom_point(aes(x = displ, y = hwy, color = "pink"), shape = 17), stroke = 3)
+```
+
+**The stroke aesthetic (I assume) gives the entire every graphed point an outline, I believe it would only work with filled shapes.**
+
+**I think that aesthetic would apply because all that changes is the fact that the aesthetic is not used on a variable name.**
